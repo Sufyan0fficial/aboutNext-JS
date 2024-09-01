@@ -5,8 +5,9 @@ import { useState } from "react";
 function Square({ value, onSquareClick }: any) {
   return (
     <button
-      className="w-[100px] h-[100px] flex justify-center items-center border border-white font-bold text-7xl"
+      className="w-[100px] h-[100px] flex justify-center items-center border border-white font-bold text-7xl bg-slate-400 hover:bg-slate-500 "
       onClick={onSquareClick}
+      style={{ color: value === "X" ? "red" : "blue" }}
     >
       {value}
     </button>
@@ -34,24 +35,31 @@ export default function MyApp() {
 
   const winner = calculateWinner(squares);
   let status;
+  let player;
   if (winner) {
     status = `Winner : ${winner}`;
   } else {
-    status = `Next Move : ${whatNext ? "X" : "O"}`;
+    player = `Next Move : ${whatNext ? "X" : "O"}`;
   }
   return (
-    <div className="w-screen h-screen flex flex-col gap-4 justify-center items-center">
-      <div className="font-semibold text-xl">{status}</div>
-      <div className="flex flex-wrap w-[320px] h-[320px] justify-evenly content-evenly">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+    <div className="w-screen h-screen flex flex-col gap-4 justify-center items-center relative bg-gradient-to-r from-slate-950 to-slate-900">
+      <div className="absolute top-0 text-4xl font-extrabold">Tic-Tac-Toe</div>
+      <div className="font-semibold text-xl">{player}</div>
+      <div className="flex gap-8">
+        <div className="flex flex-wrap w-[320px] h-[320px] justify-evenly content-evenly">
+          <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
+          <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
+          <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+          <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
+          <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
+          <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+          <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
+          <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
+          <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+        </div>
+        <div className=" flex justify-center items-center text-7xl font-black">
+          {status}
+        </div>
       </div>
     </div>
   );
