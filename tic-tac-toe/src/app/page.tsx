@@ -6,7 +6,7 @@ function Square({ value, onSquareClick, isWinningSquare }: any) {
   return (
     <button
       className={`w-[100px] h-[100px] flex justify-center items-center border border-white font-bold text-7xl bg-slate-400 hover:bg-slate-500 ${
-        isWinningSquare ? "bg-yellow-400" : ""
+        isWinningSquare ? "bg-yellow-300" : ""
       }`}
       onClick={onSquareClick}
       style={{ color: value === "X" ? "red" : "blue" }}
