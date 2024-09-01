@@ -57,7 +57,7 @@ export default function MyApp() {
           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
-        <div className=" flex justify-center items-center text-7xl font-black">
+        <div className=" flex justify-center items-center text-6xl font-black ">
           {status}
         </div>
       </div>
