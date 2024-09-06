@@ -22,6 +22,8 @@ export default function MyApp() {
 
   function handleClick(i: any) {
     const squaresArray = squares.slice();
+    console.log("sssss", squaresArray);
+
     if (squaresArray[i] || calculateWinner(squares)) {
       return;
     }
@@ -34,6 +36,8 @@ export default function MyApp() {
     setsquares(squaresArray);
     setwhatNext(!whatNext);
   }
+
+  console.log("qqqqq", squares);
 
   const winnerInfo = calculateWinner(squares);
   const winner = winnerInfo?.winner;
@@ -91,3 +95,5 @@ function calculateWinner(squares: any) {
 
   return null;
 }
+
+
