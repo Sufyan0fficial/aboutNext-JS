@@ -66,12 +66,12 @@ function NavBar() {
         <a href={""} download={""}>
           <button
             type="submit"
-            className="border bg-gradient-to-r from-slate-950 to-violet-600 hover:bg-gradient-to-l hover:duration-700 hover:transform font-bold px-7 py-3 rounded-full "
+            className="border bg-gradient-to-r from-slate-950 to-violet-600 hover:bg-gradient-to-l hover:duration-700 hover:transform font-bold px-7 py-3 rounded-full flex-shrink-0"
           >
             Hire me
           </button>
         </a>
-        <div className="lg:hidden sm:flex ">
+        <div className="lg:hidden block ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
