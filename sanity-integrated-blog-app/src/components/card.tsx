@@ -1,11 +1,13 @@
 import { urlFor } from "@/sanity/lib/image";
+import { DataType } from "@/type";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function Card({ post }: { [key: string]: string | any }) {
+function Card({ post }: { post: DataType }) {
   return (
     <div className="p-6 border flex flex-col justify-between items-center gap-6 w-full lg:w-[33%] rounded-3xl">
-      <img
+      <Image
         src={urlFor(post.image).url()}
         alt={post.title}
         height={400}
