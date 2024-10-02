@@ -1,6 +1,12 @@
 export interface DataType {
   title: string;
-  image: any;
+  image: {
+    _type: "image";
+    asset: {
+      _ref: string;
+      _type: "reference";
+    };
+  };
   text: string;
   slug: string;
 }

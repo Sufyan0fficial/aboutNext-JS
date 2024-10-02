@@ -1,9 +1,8 @@
 import { urlFor } from "@/sanity/lib/image";
-import { DataType } from "@/type";
 import Link from "next/link";
 import React from "react";
 
-function Card({ post }: { [key: string]: any }) {
+function Card({ post }: { [key: string]: string | any }) {
   return (
     <div className="p-6 border flex flex-col justify-between items-center gap-6 w-full lg:w-[33%] rounded-3xl">
       <img
