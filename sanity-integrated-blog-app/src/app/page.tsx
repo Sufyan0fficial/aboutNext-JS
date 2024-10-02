@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 import React from "react";
 import Card from "../components/card";
 import { client } from "@/sanity/lib/client";
-import { DataType } from "@/type";
+import { DataType } from "../../src/type";
 
 async function page() {
   const query = `*[_type == "blogs"]{

@@ -1,5 +1,6 @@
 import { urlFor } from "@/sanity/lib/image";
-import { DataType } from "@/type";
+import { DataType } from "../../src/type";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,7 +12,7 @@ function Card({ post }: { post: DataType }) {
         src={urlFor(post.image).url()}
         alt={post.title}
         height={400}
-        width={400}
+        width={399}
       />
       <h4 className="font-bold">{post.title}</h4>
       <p>{post.text}</p>
