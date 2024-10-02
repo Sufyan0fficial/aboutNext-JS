@@ -2,6 +2,7 @@ import { Container } from "@mui/material";
 import React from "react";
 import Card from "../components/card";
 import { client } from "@/sanity/lib/client";
+import { DataType } from "@/type";
 
 async function page() {
   const query = `*[_type == "blogs"]{
@@ -24,7 +25,7 @@ async function page() {
       </div>
       <Container maxWidth="xl">
         <div className="flex flex-col lg:flex-row justify-center items-center lg:items-stretch my-20 lg:gap-6 gap-8">
-          {blog.map((data: any) => (
+          {blog.map((data: DataType) => (
             <Card post={data} key={data.slug} />
           ))}
         </div>
