@@ -1,9 +1,9 @@
 import { urlFor } from "@/sanity/lib/image";
 import { DataType } from "../../src/type";
 
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 function Card({ post }: { post: DataType }) {
   return (

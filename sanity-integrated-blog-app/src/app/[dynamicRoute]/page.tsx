@@ -2,8 +2,10 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { Container } from "@mui/material";
 import { PortableText } from "@portabletext/react";
-import Image from "next/image";
+
 import React from "react";
+
+export const revalidate = 10;
 
 async function DynamicCard({ params }: { params: { dynamicRoute: string } }) {
   const query = `*[_type == 'blogs' && slug.current == '${params.dynamicRoute}']{
@@ -17,7 +19,7 @@ async function DynamicCard({ params }: { params: { dynamicRoute: string } }) {
         <Container maxWidth="xl">
           <div className="flex flex-col gap-6 justify-center items-center">
             <h1>{post.title}</h1>
-            <Image src={urlFor(post.image).url()} alt={`${post.slug} image`} />
+            <img src={urlFor(post.image).url()} alt={`${post.slug} image`} />
             <Container maxWidth="lg">
               <section className="prose-xl prose-strong:text-amber-500 prose-h2:text-rose-600 prose-h2:font-black prose-p:text-2xl prose-li:list-disc prose-li:list-inside prose-p:font-light">
                 <PortableText value={post.richText} />

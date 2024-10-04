@@ -4,6 +4,8 @@ import Card from "../components/card";
 import { client } from "@/sanity/lib/client";
 import { DataType } from "../../src/type";
 
+export const revalidate = 10;
+
 async function page() {
   const query = `*[_type == "blogs"]{
  title, image, text,  "slug":slug.current
@@ -17,6 +19,7 @@ async function page() {
           <h1 className="font-black text-rose-600  text-center font-robo1">
             Blogs Website
           </h1>
+
           <h6 className="text-center mt-6 leading-relaxed">
             This Blog website is created By <strong>Muhammad Sufyan</strong> to
             practise <strong>Sanity_headless CMS</strong> & UI Development
